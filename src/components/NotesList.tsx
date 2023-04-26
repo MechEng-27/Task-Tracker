@@ -3,13 +3,15 @@ import Notes from "./Notes";
 import { Note } from "../models/note.model";
 
 interface INotesListProps {
-    notes: Note[]
+    notes: Note[],
+    setNotes: React.Dispatch<React.SetStateAction<Note[]>>
 }
 
-const NotesList: React.FunctionComponent<INotesListProps> = ({ notes }) => {
+const NotesList: React.FunctionComponent<INotesListProps> = ({ notes, setNotes }) => {
   const handleDelete = (id: string) => {
-    console.log("The note to be deleted", id)
-  }
+    setNotes(notes.filter(note => note.id !== id))
+  };
+
   const renderNotes = ():JSX.Element[] => {
     return notes.map(note => {
       return (<Notes key={ note.id } note={ note }
@@ -19,7 +21,7 @@ const NotesList: React.FunctionComponent<INotesListProps> = ({ notes }) => {
 
   return (
     <>
-        <h2 className="mt-3">Notes</h2>
+        <h2 className="pt-3">Notes</h2>
         <div>{ renderNotes() }</div>
     </>
   );

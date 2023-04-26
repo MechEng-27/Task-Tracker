@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header"
 import NotesList from "./components/NotesList"
+import CreateNotes from "./components/CreateNotes"
 import { Note } from "./models/note.model"
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,9 +21,16 @@ function App() {
     <>
       <Header />
       <Container className="mt-5">
-        <Col>
-          <NotesList notes= { notes } />
-        </Col>
+        <Row>
+          <Col>
+            <NotesList notes={ notes } setNotes={ setNotes }/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <CreateNotes notes={ notes } setNotes={ setNotes }/>
+          </Col>
+        </Row>
       </Container>
     </>
 
