@@ -5,9 +5,10 @@ import { Note } from "../models/note.model";
 interface INotesListProps {
     notes: Note[],
     setNotes: React.Dispatch<React.SetStateAction<Note[]>>
-}
+};
 
 const NotesList: React.FunctionComponent<INotesListProps> = ({ notes, setNotes }) => {
+  // filter to remove note upon clicking delete button
   const handleDelete = (id: string) => {
     setNotes(notes.filter(note => note.id !== id))
   };
@@ -21,7 +22,7 @@ const NotesList: React.FunctionComponent<INotesListProps> = ({ notes, setNotes }
 
   return (
     <>
-        <h2 className="pt-3">Notes</h2>
+        <h2 className="pt-3">Open Tasks</h2>
         <div>{ renderNotes() }</div>
     </>
   );

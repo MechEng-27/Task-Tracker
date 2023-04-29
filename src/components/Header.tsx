@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Container, Navbar } from "react-bootstrap"
+import { Container, Navbar } from "react-bootstrap";
 
 interface  HeaderProps {
-}
+};
 
 const Header: React.FunctionComponent< HeaderProps> = (props) => {
   return (

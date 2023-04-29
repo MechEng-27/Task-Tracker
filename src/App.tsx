@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import Header from "./components/Header"
-import NotesList from "./components/NotesList"
-import CreateNotes from "./components/CreateNotes"
-import { Note } from "./models/note.model"
+import { useState } from "react";
+import Header from "./components/Header";
+import NotesList from "./components/NotesList";
+import CreateNotes from "./components/CreateNotes";
+import { Note } from "./models/note.model";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Col, Container, Row} from "react-bootstrap"
+import { Col, Container, Row} from "react-bootstrap";
 
 function App() {
   const [notes, setNotes] = useState<Note[]>
   ([{
     id: (new Date).toString(),
-    title: "Meetings",
-    text: "Schedule meeting with UI/UX team",
+    title: "Sample Task Type - Meeting",
+    text: "Sample Task - Schedule meeting with UI/UX team",
     color: "#dfdfdf",
     date: (new Date).toString()
   }]);
+
 
   return (
     <>
@@ -33,8 +34,7 @@ function App() {
         </Row>
       </Container>
     </>
-
   );
-}
+};
 
-export default App
+export default App;
